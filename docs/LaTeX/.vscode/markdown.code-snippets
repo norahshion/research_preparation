@@ -1,0 +1,72 @@
+{
+  "Markdown Bold": {
+    "scope": "markdown",
+    "prefix": ["bold", "**"],
+    "body": "**${1:text}**",
+    "description": "Insert bold Markdown text"
+  },
+  "Markdown Italic": {
+    "scope": "markdown",
+    "prefix": ["italic", "*"],
+    "body": "*${1:text}*",
+    "description": "Insert italic Markdown text"
+  },
+  "Markdown Strikethrough": {
+    "scope": "markdown",
+    "prefix": ["strike", "~~"],
+    "body": "~~${1:text}~~",
+    "description": "Insert strikethrough Markdown text"
+  },
+  "Markdown Inline Code": {
+    "scope": "markdown",
+    "prefix": ["code", "`"],
+    "body": "`${1:code}`",
+    "description": "Insert inline code"
+  },
+  "Markdown Code Block": {
+    "scope": "markdown",
+    "prefix": ["codeblock", "```"],
+    "body": [
+      "```${1:language}",
+      "${2:code}",
+      "```"
+    ],
+    "description": "Insert fenced code block"
+  },
+  "Markdown Link": {
+    "scope": "markdown",
+    "prefix": ["link", "[]()"],
+    "body": "[${1:text}](${2:url})",
+    "description": "Insert link Markdown text"
+  },
+  "Markdown Image": {
+    "scope": "markdown",
+    "prefix": ["image", "![]()"],
+    "body": "![${1:alt}](${2:path})",
+    "description": "Insert image Markdown text"
+  },
+  "Markdown Heading 1": {
+    "scope": "markdown",
+    "prefix": ["h1", "#"],
+    "body": "# ${1:heading}",
+    "description": "Insert level 1 heading"
+  },
+  "Markdown Heading 2": {
+    "scope": "markdown",
+    "prefix": ["h2", "##"],
+    "body": "## ${1:heading}",
+    "description": "Insert level 2 heading"
+  },
+  "Markdown Quote": {
+    "scope": "markdown",
+    "prefix": ["quote", ">"],
+    "body": "> ${1:text}",
+    "description": "Insert blockquote"
+  },
+  "Markdown Bullet List": {
+    "scope": "markdown",
+    "prefix": ["list", "-"],
+    "body": "- ${1:item}",
+    "description": "Insert bullet list item"
+  }
+}

@@ -1,0 +1,21 @@
+[
+  {
+    "key": "ctrl+alt+v",
+    "command": "extension.pasteImage",
+    "when": "editorTextFocus && editorLangId == 'markdown'"
+  }
+  ,
+  {
+    "key": "ctrl+alt+c",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Convert clipboard path to image",
+    "when": "editorTextFocus && editorLangId == 'markdown'"
+  }
+  ,
+  {
+    "key": "ctrl+alt+p",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Copy explorer image to img and put markdown link",
+    "when": "editorTextFocus && editorLangId == 'markdown'"
+  }
+]

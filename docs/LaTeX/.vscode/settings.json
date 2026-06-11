@@ -1,0 +1,85 @@
+{
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk (upLaTeX)",
+            "command": "C:/texlive/2026/bin/windows/latexmk.exe",
+            "args": [
+                "-gg",
+                "-cd",
+                "-pdfdvi",
+                "-latex=uplatex %O %S", // ⭕️ これにより日本語が完璧に処理され、文字化けを防ぎます
+                "-outdir=%OUTDIR%",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "uplatex",
+            "command": "C:/texlive/2026/bin/windows/uplatex.exe",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "dvipdfmx",
+            "command": "C:/texlive/2026/bin/windows/dvipdfmx.exe",
+            "args": [
+                "-g",
+                "-o",
+                "\"%OUTDIR%/%DOCFILE%.pdf\"", // ⭕️ アンダーバー保護を追加
+                "\"%OUTDIR%/%DOCFILE%.dvi\"" // ⭕️ アンダーバー保護を追加
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk (Reference自動判別・普段使い用)",
+            "tools": [
+                "latexmk (upLaTeX)"
+            ]
+        },
+        {
+            "name": "uplatex -> dvipdfmx (万が一のときの手動直線ビルド)",
+            "tools": [
+                "uplatex",
+                "dvipdfmx"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipe.default": "first", // ⭕️ 常に一番上の全自動 latexmk レシピを起動
+    "latex-workshop.latex.outDir": "out",
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-utilities.countWord.format": "",
+    "[latex]": {
+        "editor.wordWrap": "on"
+    },
+    "files.encoding": "utf8",
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    // VS Code標準のコピー＆ペースト機能を完全に無効化（干渉を完全に遮断）
+    "editor.dropIntoEditor.enabled": false,
+    "editor.pasteAs.enabled": false,
+    // ====== このプロジェクト内でのMarkdown自動括弧・タグ補完の強制有効化 ======
+    "[markdown]": {
+        "editor.autoClosingBrackets": "always",
+        "editor.autoClosingQuotes": "always",
+        "editor.suggest.showSnippets": true,
+        "editor.snippetSuggestions": "top",
+        "editor.tabCompletion": "on",
+        "editor.quickSuggestions": {
+            "other": "on",
+            "comments": "on",
+            "strings": "on"
+        }
+        ,
+        // エクスプローラーで画像を選び Ctrl+C したあと、Markdown エディタで Ctrl+V できるようにする
+        "editor.dropIntoEditor.enabled": true,
+        "editor.pasteAs.enabled": true
+    }
+}
